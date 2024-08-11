@@ -1,0 +1,48 @@
+@use "variables";
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: variables.$bg-color;
+  z-index: 1;
+
+  &--is-hidden {
+    background-color: transparent;
+    transition: 200ms ease-in-out;
+    opacity: 1;
+  }
+
+  &__logo,
+  .button {
+    &--is-hidden {
+      visibility: hidden;
+      opacity: 0;
+      transition: 200ms ease-in-out;
+    }
+  }
+
+  &__container {
+    padding: 8px 36px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__logo {
+    max-width: 80px;
+    width: 100%;
+    margin: 5px;
+    transition: 200ms;
+  }
+  &__links {
+    display: flex;
+
+    &__item {
+      margin: 5px;
+    }
+  }
+  .button {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    transition: 250ms ease-in-out;
+  }
+}

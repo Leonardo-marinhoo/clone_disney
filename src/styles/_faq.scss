@@ -33,8 +33,8 @@
 
       &--is-open {
         .faq__questions__item__answer {
-          transition: 200ms ease-in-out;
           height: auto;
+          transition: height, 500ms ease;
           padding-bottom: 24px;
         }
         .faq__questions__item__question::after {
@@ -43,10 +43,10 @@
       }
 
       &__answer {
+        transition: height, 500ms ease-in;
         height: 0px;
         overflow: hidden;
         padding: 0 24px;
-        transition: 200ms ease-in-out;
 
         ul{
             padding-left: 40px;

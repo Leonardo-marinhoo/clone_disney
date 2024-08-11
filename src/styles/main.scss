@@ -7,6 +7,7 @@
 @use "devices";
 @use "faq";
 @use "footer";
+@use "header";
 
 @font-face {
   font-family: Avenir;
@@ -34,9 +35,10 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Avenir, sans-serif;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  list-style: none;
+//   -webkit-appearance: none; o ideal seria utilizar um wrapper+icon proprio nos elementos <select> pois alguns navegadores (ex: opera) estilizam estes elementos 
+//   -moz-appearance: none;
+//   appearance: none;
 }
 body {
   background-color: variables.$bg-color;
@@ -69,15 +71,39 @@ body {
   text-decoration: underline;
 }
 .button {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 60px;
   font-size: 18px;
   color: variables.$secondary-text-color;
-  background-color: #6421ff;
+  background-color: variables.$btn-primary-color;
   text-transform: uppercase;
   border-radius: 4px;
-  margin-top: 2vw;
-  margin-bottom: 8px;
   border: none;
+  text-decoration: none;
+  padding: 8px 14px;
+  letter-spacing: 1px;
+  border: 1px solid variables.$btn-primary-color;
+  &:hover{
+    background-color: lighten(variables.$btn-primary-color, 3%);
+}
+
+  &--secondary{
+    background-color: variables.$btn-secondary-color;
+    border-color: variables.$btn-secondary-color;
+    &:hover{
+        background-color: lighten(variables.$btn-secondary-color, 3%);
+    }
+  }
+  &--dark{
+    background-color:variables.$btn-dark-color;
+    border-color: variables.$secondary-text-color;
+    &:hover{
+        background-color: variables.$secondary-text-color;
+        color: variables.$bg-color;
+    }
+
+  }
 }
